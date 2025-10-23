@@ -1,0 +1,143 @@
+/* -------------------- FONT LOCAL -------------------- */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* -------------------- VARIABEL WARNA -------------------- */
+:root {
+  --biru: #1E88E5;
+  --abu: #f8f9fa;
+  --putih: #ffffff;
+
+  /* Ukuran font dasar */
+  --font-base: 1rem;
+  --font-large: clamp(1.5rem, 2vw + 1rem, 3rem);
+  --font-medium: clamp(1.2rem, 1.5vw + 0.8rem, 2rem);
+  --font-small: clamp(0.9rem, 0.8vw + 0.6rem, 1rem);
+
+  /* Padding dan margin responsif */
+  --section-padding: clamp(3rem, 5vw, 6rem);
+  --footer-padding: clamp(2rem, 4vw, 4rem);
+}
+
+/* -------------------- GLOBAL STYLE -------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--abu);
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: #212529;
+}
+
+h1, h2, h3, .fw-600 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--font-large);
+}
+
+h2 {
+  font-size: var(--font-medium);
+}
+
+h3 {
+  font-size: calc(var(--font-medium) * 0.9);
+}
+
+p {
+  font-size: var(--font-small);
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+  background-color: var(--biru);
+  padding: 1rem 0;
+}
+
+.navbar .navbar-brand {
+  color: var(--putih);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-link {
+  color: var(--putih);
+  font-size: var(--font-small);
+  margin-left: 1rem;
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+  padding: var(--section-padding) 0;
+  background-color: var(--putih);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------------- BUTTON -------------------- */
+.btn-primary {
+  background-color: var(--biru);
+  border-color: var(--biru);
+  font-size: var(--font-small);
+  padding: 0.75em 1.5em;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* -------------------- FEATURES SECTION -------------------- */
+.features {
+  padding: var(--section-padding) 0;
+  background-color: var(--abu);
+}
+
+.features i.bi {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  color: var(--biru);
+  margin-bottom: 1rem;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+  padding: var(--footer-padding) 0;
+  background-color: #e9ecef;
+  text-align: center;
+  font-size: var(--font-small);
+}

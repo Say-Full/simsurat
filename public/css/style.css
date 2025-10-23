@@ -29,9 +29,10 @@
 
 /* -------------------- VARIABEL WARNA -------------------- */
 :root {
-  --biru: #1E88E5;
+  --biru: #3b73ed;
   --abu: #f8f9fa;
   --putih: #ffffff;
+  --hitam: #000000;
 
   /* Ukuran font dasar */
   --font-base: 1rem;
@@ -41,7 +42,7 @@
 
   /* Padding dan margin responsif */
   --section-padding: clamp(3rem, 5vw, 6rem);
-  --footer-padding: clamp(2rem, 4vw, 4rem);
+  --footer-padding: clamp(0.5rem, 1vw, 1rem);
 }
 
 /* -------------------- GLOBAL STYLE -------------------- */
@@ -74,70 +75,64 @@ p {
   font-size: var(--font-small);
 }
 
+section {
+  padding: var(--section-padding) 0;
+}
+
+.img-svg-repo {
+  height: 3rem;
+  width: auto;
+}
+
 /* -------------------- NAVBAR -------------------- */
 .navbar {
-  background-color: var(--biru);
+  background-color: var(--putih);
   padding: 1rem 0;
 }
 
 .navbar .navbar-brand {
-  color: var(--putih);
+  color: var(--biru);
   font-weight: 600;
   font-size: 1.2rem;
 }
 
 .navbar .nav-link {
-  color: var(--putih);
-  font-size: var(--font-small);
+  color: var(--hitam);
+  font-size: var(--font-base);
   margin-left: 1rem;
+  transition: color 0.2s ease;
 }
 
-/* -------------------- HERO SECTION -------------------- */
-.hero {
-  padding: var(--section-padding) 0;
-  background-color: var(--putih);
-  text-align: center;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--biru);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
-.hero h1 {
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  margin-bottom: 2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.navbar .btn {
+  border-radius: 0.5rem;
+  padding: 0.6em 1.2em;
 }
 
 /* -------------------- BUTTON -------------------- */
 .btn-primary {
   background-color: var(--biru);
   border-color: var(--biru);
+  color: var(--putih);
   font-size: var(--font-small);
   padding: 0.75em 1.5em;
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
-}
-
-/* -------------------- FEATURES SECTION -------------------- */
-.features {
-  padding: var(--section-padding) 0;
-  background-color: var(--abu);
-}
-
-.features i.bi {
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  color: var(--biru);
-  margin-bottom: 1rem;
+  opacity: 0.8;
 }
 
 /* -------------------- FOOTER -------------------- */
 .footer {
   padding: var(--footer-padding) 0;
-  background-color: #e9ecef;
+  background-color: var(--biru);
   text-align: center;
   font-size: var(--font-small);
+  color: var(--putih)
 }

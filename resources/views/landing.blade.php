@@ -72,7 +72,11 @@
           <li class="nav-item"><a class="nav-link fw-medium mx-2" href="#features">Fitur</a></li>
           <li class="nav-item"><a class="nav-link fw-medium mx-2" href="#about">Tentang</a></li>
           <li class="nav-item"><a class="nav-link fw-medium mx-2" href="#contact">Kontak</a></li>
-          <li class="nav-item"><a class="nav-link fw-medium mx-2" href="/login">Masuk</a></li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Masuk
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -83,7 +87,9 @@
     <div class="container">
       <h1 class="fw-600 mb-4">Sistem Informasi Manajemen Surat Digital untuk UMKM</h1>
       <p class="lead mb-5">Kelola surat masuk, surat keluar, disposisi & tanda tangan elektronik dalam satu sistem sederhana dan profesional.</p>
-      <a href="/register" class="btn btn-light btn-lg text-primary">Mulai Gunakan Sekarang</a>
+      <button type="button" class="btn btn-light btn-lg text-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+        Mulai Gunakan Sekarang
+      </button>
     </div>
   </section>
 
@@ -293,6 +299,116 @@
     </div>
   </footer>
 
+
+  
+  <!-- Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Header -->
+        <div class="modal-header justify-content-center position-relative">
+          <h1 class="modal-title fs-5 m-0 text-center">Login</h1>
+          <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form method="POST" action="#">
+            @csrf
+            <div class="mb-3">
+              <label for="login_email" class="form-label">Alamat Email</label>
+              <input type="email" class="form-control" id="login_email" name="email" placeholder="nama@perusahaan.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="login_kata_sandi" class="form-label">Kata Sandi</label>
+              <input type="password" class="form-control" id="login_kata_sandi" name="kata_sandi" placeholder="Masukkan Kata Sandi" required>
+            </div>
+
+            <!-- Tombol di kanan bawah -->
+            <div class="d-flex justify-content-center mt-1">
+              <button type="submit" class="btn btn-primary" style="width: 100%">Masuk</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Garis pemisah -->
+        <div class="d-flex align-items-center my-1">
+          <hr class="flex-grow-1">
+          <span class="mx-2 text-muted">Atau</span>
+          <hr class="flex-grow-1">
+        </div>
+
+        <!-- Link Daftar -->
+        <div class="text-center mb-3">
+          <span class="text-muted">Belum punya akun?</span>
+          <a href="#" class="text-primary fw-semibold text-decoration-none ms-1" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">
+            Daftar sekarang
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal Register -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+      <!-- Header -->
+        <div class="modal-header justify-content-center position-relative">
+          <h1 class="modal-title fs-5 m-0 text-center">Daftar Akun</h1>
+          <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form method="POST" action="#">
+            @csrf
+            <div class="mb-3">
+              <label for="register_name" class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-control" id="register_name" name="name" placeholder="Nama Anda" required>
+            </div>
+            <div class="mb-3">
+              <label for="register_email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="register_email" name="email" placeholder="nama@perusahaan.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="register_kata_sandi" class="form-label">Password</label>
+              <input type="password" class="form-control" id="register_kata_sandi" name="kata_sandi" placeholder="Masukkan Password" required>
+            </div>
+
+            <div class="d-flex justify-content-center my-2">
+              <button type="submit" class="btn btn-success" style="width: 100%">Daftar</button>
+            </div>
+          </form>
+
+          <!-- Link balik ke Login -->
+          <div class="text-center mt-3">
+            <span class="text-muted">Sudah punya akun?</span>
+            <a href="#" class="text-primary fw-semibold text-decoration-none ms-1" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Masuk sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+  <script>
+    // Modal Login - Autofocus
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    })
+  </script>
 </body>
 </html>

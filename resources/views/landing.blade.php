@@ -322,11 +322,17 @@
 
         <!-- Body -->
         <div class="modal-body">
-          <form method="POST" action="#">
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                {{ $errors->first() }}
+            </div>
+          @endif
+
+          <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="mb-3">
-              <label for="login_email" class="form-label">Alamat Email</label>
-              <input type="email" class="form-control" id="login_email" name="email" placeholder="nama@perusahaan.com" required>
+              <label for="login_email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login_email" name="email" placeholder="nama@perusahaan.com" value="{{ old('email') }}" required>
             </div>
             <div class="mb-3">
               <label for="login_kata_sandi" class="form-label">Kata Sandi</label>

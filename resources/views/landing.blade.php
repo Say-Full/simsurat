@@ -86,7 +86,7 @@
   <section class="hero text-center">
     <div class="container">
       <h1 class="fw-600 mb-4">Sistem Informasi Manajemen Surat Digital untuk UMKM</h1>
-      <p class="lead mb-5">Kelola surat masuk, surat keluar, disposisi & tanda tangan elektronik dalam satu sistem sederhana dan profesional.</p>
+      <p class="lead mb-5">Kelola surat masuk, surat keluar, disposisi, tanda tangan elektronik, dan arsip digital dalam satu sistem sederhana dan profesional.</p>
       <button type="button" class="btn btn-light btn-lg text-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
         Mulai Gunakan Sekarang
       </button>
@@ -366,7 +366,7 @@
 
         <!-- Body -->
         <div class="modal-body">
-          <form method="POST" action="#">
+          <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="mb-3">
               <label for="register_name" class="form-label">Nama Lengkap</label>

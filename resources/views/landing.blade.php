@@ -52,7 +52,7 @@
   </style>
 </head>
 <body>
-
+  <!-- Topbar -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
@@ -83,6 +83,8 @@
   </nav>
 
 
+
+  <!-- Section 1 -->
   <section class="hero text-center">
     <div class="container">
       <h1 class="fw-600 mb-4">Sistem Informasi Manajemen Surat Digital untuk UMKM</h1>
@@ -93,6 +95,9 @@
     </div>
   </section>
 
+
+
+  <!-- Section 2: Features -->
   <section id="features" class="py-4 sections" style="min-height: 100vh;">
     <div class="container">
       <h2 class="fw-600 text-center mb-5">Fitur Unggulan</h2>
@@ -187,6 +192,7 @@
 
 
 
+  <!-- Section 3: About -->
   <section id="about" class="py-5 bg-white" style="min-height: 100vh;">
     <div class="container">
       <h2 class="fw-600 text-center mb-5">Tentang</h2>
@@ -221,7 +227,7 @@
 
 
 
-
+  <!-- Section 4: Contact -->
   <section id="contact" class="py-5 bg-light" style="min-height: 100vh;">
     <div class="container">
       <h2 class="fw-600 text-center mb-5">Hubungi Kami</h2>
@@ -293,6 +299,8 @@
   </section>
 
 
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p class="mb-0">&copy; 2025 SIM-Surat. All rights reserved.</p>
@@ -366,7 +374,7 @@
 
         <!-- Body -->
         <div class="modal-body">
-          <form method="POST" action="{{ route('register') }}">
+          <form>
             @csrf
             <div class="mb-3">
               <label for="register_name" class="form-label">Nama Lengkap</label>
@@ -403,8 +411,8 @@
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
   <script>
     // Modal Login - Autofocus
-    const myModal = document.getElementById('myModal')
-    const myInput = document.getElementById('myInput')
+    const myModal = document.getElementById('loginModal')
+    const myInput = document.getElementById('login_email')
 
     myModal.addEventListener('shown.bs.modal', () => {
       myInput.focus()

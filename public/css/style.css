@@ -46,11 +46,15 @@
 }
 
 /* -------------------- GLOBAL STYLE -------------------- */
+* {
+  transition: background-color .15s ease, color .12s ease;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--abu);
   font-size: var(--font-base);
-  line-height: 1.6;
+  line-height: 1.7;
   color: #212529;
 }
 

@@ -25,7 +25,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
 
-            return redirect()->route('dashboard.index'); # nama route mengikuti name di web.php
+            return redirect()->route('beranda.index'); # nama route mengikuti name di web.php
         }
 
         return back()->withErrors([

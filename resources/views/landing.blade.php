@@ -316,7 +316,7 @@
 
         <!-- Header -->
         <div class="modal-header justify-content-center position-relative">
-          <h1 class="modal-title fs-5 m-0 text-center">Login</h1>
+          <h1 class="modal-title fs-5 m-0 text-center">LOGIN</h1>
           <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
@@ -332,16 +332,16 @@
             @csrf
             <div class="mb-3">
               <label for="login_email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="login_email" name="email" placeholder="nama@perusahaan.com" value="{{ old('email') }}" required>
+              <input type="email" class="form-control" style="width: 90%" id="login_email" name="email" placeholder="nama@perusahaan.com" value="{{ old('email') }}" required>
             </div>
             <div class="mb-3">
               <label for="login_kata_sandi" class="form-label">Kata Sandi</label>
-              <input type="password" class="form-control" id="login_kata_sandi" name="kata_sandi" placeholder="Masukkan Kata Sandi" required>
+              <input type="password" class="form-control" style="width: 90%" id="login_kata_sandi" name="kata_sandi" placeholder="Masukkan Kata Sandi" required>
             </div>
 
             <!-- Tombol di kanan bawah -->
             <div class="d-flex justify-content-center mt-1">
-              <button type="submit" class="btn btn-primary" style="width: 100%">Masuk</button>
+              <button type="submit" class="btn btn-primary" style="width: 80%">Masuk</button>
             </div>
           </form>
         </div>

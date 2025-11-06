@@ -2,5 +2,6 @@
 
 @section('content')
 <div class="container">
+	Tes
 </div>
 @endsection

@@ -134,7 +134,7 @@
 
     .content-wrapper {
       flex-grow: 1;
-      padding: 1.5rem;
+      padding: 1rem;
     }
   </style>
 </head>

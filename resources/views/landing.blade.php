@@ -367,50 +367,6 @@
 
 
 
-  <!-- Modal Register -->
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-
-      <!-- Header -->
-        <div class="modal-header justify-content-center position-relative">
-          <h1 class="modal-title fs-5 m-0 text-center">Daftar Akun</h1>
-          <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"></button>
-        </div>
-
-        <!-- Body -->
-        <div class="modal-body">
-          <form>
-            @csrf
-            <div class="mb-3">
-              <label for="register_name" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" id="register_name" name="name" placeholder="Nama Anda" required>
-            </div>
-            <div class="mb-3">
-              <label for="register_email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="register_email" name="email" placeholder="nama@perusahaan.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="register_kata_sandi" class="form-label">Password</label>
-              <input type="password" class="form-control" id="register_kata_sandi" name="kata_sandi" placeholder="Masukkan Password" required>
-            </div>
-
-            <div class="d-flex justify-content-center my-2">
-              <button type="submit" class="btn btn-success" style="width: 100%">Daftar</button>
-            </div>
-          </form>
-
-          <!-- Link balik ke Login -->
-          <div class="text-center mt-3">
-            <span class="text-muted">Sudah punya akun?</span>
-            <a href="#" class="text-primary fw-semibold text-decoration-none ms-1" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">
-              Masuk sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -423,6 +379,12 @@
     myModal.addEventListener('shown.bs.modal', () => {
       myInput.focus()
     })
+
+    // Jika login gagal, buka modal login otomatis
+    @if ($errors->any())
+      const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.show();
+    @endif
   </script>
 </body>
 </html>
